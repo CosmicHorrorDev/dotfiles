@@ -6,6 +6,8 @@ export ZSH_CUSTOM=/usr/share/oh-my-zsh/custom
 export EDITOR=nvim
 export VISUAL=nvim
 
+export LESSKEY=~/.config/less/less_config
+
 export RANGER_LOAD_DEFAULT_RC=FALSE
 
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
