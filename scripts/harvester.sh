@@ -1,39 +1,43 @@
 #! /bin/bash
 
+# Lay some groundwork
+REPO_HOME=~/Programming/Repos/dotfiles
+CONFIG_HOME=~/.config
+
 # clean house
-rm -r ~/.config/gumbi-dots/dotfiles
+rm -ri $REPO_HOME/dotfiles
 
 # zsh configs
-mkdir -p ~/.config/gumbi-dots/dotfiles/zsh
-cp ~/.config/zsh/.zprofile ~/.config//gumbi-dots/dotfiles/zsh/.zprofile
-cp ~/.config/zsh/.zshenv ~/.config/gumbi-dots/dotfiles/zsh/.zshenv
-cp ~/.config/zsh/.zshrc ~/.config/gumbi-dots/dotfiles/zsh/.zshrc
+mkdir -p $REPO_HOME/dotfiles/zsh
+cp $CONFIG_HOME/zsh/.zprofile $REPO_HOME/dotfiles/zsh/.zprofile
+cp $CONFIG_HOME/zsh/.zshenv $REPO_HOME/dotfiles/zsh/.zshenv
+cp $CONFIG_HOME/zsh/.zshrc $REPO_HOME/dotfiles/zsh/.zshrc
 
 # rofi configs - whole directory
-cp -r ~/.config/rofi ~/.config/gumbi-dots/dotfiles
+cp -r $CONFIG_HOME/rofi $REPO_HOME/dotfiles
 
 # ranger configs
-mkdir -p ~/.config/gumbi-dots/dotfiles/ranger
-cp ~/.config/ranger/rc.conf ~/.config/gumbi-dots/dotfiles/ranger/rc.conf
-cp ~/.config/ranger/rifle.conf ~/.config/gumbi-dots/dotfiles/ranger/rifle.conf
+mkdir -p $REPO_HOME/dotfiles/ranger
+cp $CONFIG_HOME/ranger/rc.conf $REPO_HOME/dotfiles/ranger/rc.conf
+cp $CONFIG_HOME/ranger/rifle.conf $REPO_HOME/dotfiles/ranger/rifle.conf
 
 # polybar setup - whole directory
-cp -r ~/.config/polybar ~/.config/gumbi-dots/dotfiles
+cp -r $CONFIG_HOME/polybar $REPO_HOME/dotfiles
 
 # neovim config - whole directory
-cp -r ~/.config/nvim ~/.config/gumbi-dots/dotfiles
+cp -r $CONFIG_HOME/nvim $REPO_HOME/dotfiles
 
 # neofetch config - whole directory
-cp -r ~/.config/neofetch ~/.config/gumbi-dots/dotfiles
+cp -r $CONFIG_HOME/neofetch $REPO_HOME/dotfiles
 
 # i3 config - whole directory
-cp -r ~/.config/i3 ~/.config/gumbi-dots/dotfiles
+cp -r $CONFIG_HOME/i3 $REPO_HOME/dotfiles
 
 # htop config - whole directory even though it's volatile for a config
-cp -r ~/.config/htop ~/.config/gumbi-dots/dotfiles
+cp -r $CONFIG_HOME/htop $REPO_HOME/dotfiles
 
 # git config
-cp ~/.gitconfig ~/.config/gumbi-dots/dotfiles/.gitconfig
+cp $HOME/.gitconfig $REPO_HOME/dotfiles/.gitconfig
 
 # Xdefaults config - should move to Xresources though
-cp ~/.Xdefaults ~/.config/gumbi-dots/dotfiles/.Xdefaults
+cp $HOME/.Xdefaults $REPO_HOME/dotfiles/.Xdefaults
