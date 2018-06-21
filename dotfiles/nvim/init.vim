@@ -21,7 +21,10 @@ if dein#load_state('~/.cache/dein')
  call dein#add('tpope/vim-surround')
 
  " Markdown previewing
- call dein#add('iamcco/markdown-preview.vim', { 'on_ft' : 'md' })
+ call dein#add('iamcco/markdown-preview.vim')
+
+ " Toml syntax support
+ call dein#add('cespare/vim-toml')
 
  call dein#end()
  call dein#save_state()
@@ -59,7 +62,7 @@ let g:ale_sign_column_always = 1
 
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] [%severity%] %s'
+let g:ale_echo_msg_format = '[%linter%] [%severity%] %code:%%s'
 
 let g:ale_sign_error = 'XX'
 let g:ale_sign_warning = '!!'
