@@ -1,13 +1,15 @@
 #! /bin/bash
 
 # Lay some groundwork
+REPO_HOME=~/Programming/Repos/dotfiles
 DOTS_HOME=~/Programming/Repos/dotfiles/dotfiles
-EXTRA_HOME=~/Programming/Repos/dotfiles/dots_with_extra_steps
+EXTRA_HOME=~/Programming/Repos/dotfiles/dots_with_extra_work
 CONFIG_HOME=~/.config
 
 # clean house
 rm -ri $DOTS_HOME/*
 rm -ri $EXTRA_HOME/*
+rm -ri $REPO_HOME/custom_scripts
 
 # zsh configs
 mkdir $DOTS_HOME/zsh
@@ -45,5 +47,9 @@ cp $HOME/.gitconfig $DOTS_HOME/.gitconfig
 cp $HOME/.Xdefaults $DOTS_HOME/.Xdefaults
 
 # lesskey file, takes extra to get it set up though
-mkdir $EXTRA_HOME/less
+mkdir -p $EXTRA_HOME/less
 cp $CONFIG_HOME/less/lesskey $EXTRA_HOME/less
+
+# Add all my custom scripts
+cp -r $CONFIG_HOME/custom_scripts $REPO_HOME
+
