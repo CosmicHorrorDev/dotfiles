@@ -66,6 +66,7 @@ alias gi='git init'
 # Rust Aliases
 alias cn='cargo new'
 alias cnl='cargo new --lib'
+alias cns='cargo new --vcs none'
 
 alias cb='cargo build'
 alias cbr='cargo build --release'
