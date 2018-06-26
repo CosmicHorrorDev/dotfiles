@@ -1,0 +1,57 @@
+Xft.dpi: 119
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+*background: #272827
+*foreground: #00cc00
+*fading: 15
+*fadecolor: black
+*cursorColor: #d75f87
+*pointerColorBackground: #2b2c2b
+*pointerColorForeground: #d75f87
+
+!! black light/dark
+*color8:  #707070
+*color0:  #505050
+
+!! red light/dark
+*color9:  #ee3333
+*color1:  #ee3333
+
+!! green light/dark
+! *color10: #be03ed
+! *color2:  #be03ed
+*color10: #ae03cf
+*color2:  #ae03cf
+
+!! yellow light/dark
+*color11: #bd75bd
+*color3:  #bd75bd
+
+!! blue light/dark
+*color12: #f22272
+*color4:  #f22272
+
+!! magenta light/dark
+*color13: #e085a3
+*color5:  #e085a3
+
+!! cyan light/dark
+*color14: #4f97d7
+*color6:  #4f97d7
+
+!! white light/dark
+*color15: #e0e0e0
+*color7:  #e8e8e8
+
+URxvt.depth:                32
+URxvt.background:           [70]#000000
+URxvt.foreground:           grey
+URxvt.font:                 xft:Iosevka:style=Regular:size=12
+URxvt.scrollBar:            false
+URxvt.mouseWheelScrollPage: false
+URxvt.saveLines:            5000

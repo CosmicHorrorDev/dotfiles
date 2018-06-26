@@ -13,9 +13,9 @@ rm -ri $REPO_HOME/custom_scripts
 
 # zsh configs
 mkdir $DOTS_HOME/zsh
-cp $CONFIG_HOME/zsh/.zprofile $DOTS_HOME/zsh/.zprofile
-cp $CONFIG_HOME/zsh/.zshenv $DOTS_HOME/zsh/.zshenv
-cp $CONFIG_HOME/zsh/.zshrc $DOTS_HOME/zsh/.zshrc
+cp $CONFIG_HOME/zsh/.zprofile $DOTS_HOME/zsh/zprofile
+cp $CONFIG_HOME/zsh/.zshenv $DOTS_HOME/zsh/zshenv
+cp $CONFIG_HOME/zsh/.zshrc $DOTS_HOME/zsh/zshrc
 
 # rofi configs - whole directory
 cp -r $CONFIG_HOME/rofi $DOTS_HOME
@@ -41,10 +41,10 @@ cp -r $CONFIG_HOME/i3 $DOTS_HOME
 cp -r $CONFIG_HOME/htop $DOTS_HOME
 
 # git config
-cp $HOME/.gitconfig $DOTS_HOME/.gitconfig
+cp $HOME/.gitconfig $DOTS_HOME/gitconfig
 
 # Xdefaults config - should move to Xresources though
-cp $HOME/.Xdefaults $DOTS_HOME/.Xdefaults
+cp $HOME/.Xdefaults $DOTS_HOME/Xdefaults
 
 # lesskey file, takes extra to get it set up though
 mkdir -p $EXTRA_HOME/less
