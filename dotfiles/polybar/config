@@ -54,7 +54,7 @@ font-1 = Iosevka:pixelsize=32;2
 
 modules-left = i3 arrow1 i3index arrow0
 # modules-center = music
-modules-right = arrow4 filesystem arrow3 memory arrow2 cpu arrow3 battery arrow2 volume arrow3 date arrow2
+modules-right = arrow4 filesystem2 arrow2 filesystem arrow3 memory arrow2 cpu arrow3 battery arrow2 volume arrow3 date arrow2
 
 tray-position = right
 tray-background = ${colors.background}
@@ -102,8 +102,10 @@ content-background = ${colors.background}
 type = custom/text
 content = " "
 content-font = 2
-content-foreground = ${colors.background}
+content-foreground = ${colors.grey}
 content-background = ${colors.trans}
+
+[module
 
 ;-------------------------------------------------------------------------------
 ;	M O D U L E S
@@ -134,13 +136,27 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = " SSD %percentage_used%%"
+label-mounted = " ARC %percentage_used%%"
 label-mounted-foreground = ${colors.blue}
 label-mounted-background = ${colors.background}
 
-label-unmounted = " SSD not mounted"
+label-unmounted = " ARC not mounted"
 label-unmounted-foreground = ${colors.blue}
 label-unmounted-background = ${colors.background}
+
+[module/filesystem2]
+type = internal/fs
+interval = 25
+
+mount-0 = /mnt/Shared
+
+label-mounted = " SHR %percentage_used%%"
+label-mounted-foreground = ${colors.blue}
+label-mounted-background = ${colors.grey}
+
+label-unmounted = "SHR %percentage_used%%"
+label-unmounted-foreground = ${colors.blue}
+label-unmounted-background = ${colors.grey}
 
 [module/i3index]
 type = internal/i3
