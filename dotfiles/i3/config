@@ -48,8 +48,8 @@ bindsym $mod+d exec rofi -show run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # Brightness and eventually sound
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20
 
 # Application specific key-binding
 bindsym $mod+F1 exec vivaldi-stable
@@ -167,7 +167,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # lock i3 with i3lock-fancy-git
-bindsym $mod+9 exec ~/.config/custom_scripts/lock.sh
+bindsym $mod+9 exec --no-startup-id ~/.config/custom_scripts/lock.sh
 
 # resize window (you can also use the mouse for that)
 mode "resize: left|up shrink, right|down grow" {
