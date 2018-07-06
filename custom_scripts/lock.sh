@@ -2,8 +2,8 @@
 
 B='#00000000'  # blank
 C='#ffffff00'  # clearish
-D='#4f97d7cc'  # default
-W='#f22272bb'  # wrong
+D='#4f97d7ee'  # default
+W='#f22272dd'  # wrong
 
 i3lock                        \
 \
