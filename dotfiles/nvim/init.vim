@@ -85,7 +85,7 @@ noremap l k
 noremap ; l
 
 " Key binds
-noremap ,<space> :nohlsearch<CR>
+noremap <silent> ,<space> :nohlsearch<CR>
 
 " Ruler
 set colorcolumn=80
@@ -98,7 +98,8 @@ set relativenumber
 hi LineNr ctermfg=Green
 hi CursorLineNr ctermfg=Blue
 
-hi Statement ctermfg=Cyan
+hi Statement ctermfg=Yellow
 
 hi ColorColumn ctermbg=Cyan
+hi MatchParen ctermbg=NONE ctermfg=Blue
 
