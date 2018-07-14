@@ -26,7 +26,8 @@ cp $CONFIG_HOME/ranger/rc.conf $DOTS_HOME/ranger/rc.conf
 cp $CONFIG_HOME/ranger/rifle.conf $DOTS_HOME/ranger/rifle.conf
 
 # polybar setup - whole directory
-cp -r $CONFIG_HOME/polybar $DOTS_HOME
+mkdir $DOTS_HOME/polybar
+cp -r $CONFIG_HOME/polybar/config $DOTS_HOME/polybar/config
 
 # neovim config - whole directory
 cp -r $CONFIG_HOME/nvim $DOTS_HOME

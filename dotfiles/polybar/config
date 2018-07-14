@@ -15,9 +15,10 @@ foreground-alt = #ee3333
 
 trans = #da292b2e
 ; trans = #00000000
-white = #eee
+white = #eeeeee
 grey = #444
 pink = #d75f87
+alt = #875faf
 blue = #4f97d7
 purple = #875faf
 green = #20ad80
@@ -29,32 +30,35 @@ red = #ee3333
 
 [bar/main]
 width = 100%
-height = 22
+height = 28
 
-background = ${colors.trans}
+
+background = ${colors.background}
 foreground = ${colors.foreground}
 
-; line-size = 3
-; line-color = #fff
+line-size = 3
+line-color = #fff
 
-border-size = 2
+border-size = 3
 border-color = #131313
 
 ; border-bottom-size = 2
 ; border-bottom-color = #131313
 
-; padding-left = 0
-; padding-right = 2
+padding-left = 1
+padding-right = 1
 
 ; module-margin-left = 1
 ; module-margin-right = 2
 
 font-0 = Iosevka:pixelsize=16:weight=bold;3.5
-font-1 = Iosevka:pixelsize=32;2
+# font-1 = Iosevka:pixelsize=32;2
+font-1 = Weather Icons:size=13;2
+font-2 = Material Icons:size=15;3
 
-modules-left = i3 arrow1 i3index arrow0
-# modules-center = music
-modules-right = arrow4 filesystem2 arrow2 filesystem arrow3 memory arrow2 cpu arrow3 battery arrow2 volume arrow3 date arrow2
+modules-left = i3 i3index 
+; modules-center = music
+modules-right = weather space memory space cpu space battery space wlan date
 
 tray-position = right
 tray-background = ${colors.background}
@@ -64,6 +68,10 @@ tray-padding = 4
 ;	D E C O R A T I O N S
 ;-------------------------------------------------------------------------------
 
+[module/space]
+type = custom/text
+content = " "
+content-background = ${colors.background}
 
 [module/arrow0]
 ; background to trans
@@ -98,14 +106,12 @@ content-foreground = ${colors.grey}
 content-background = ${colors.background}
 
 [module/arrow4]
-; grey to trans
+; background to trans
 type = custom/text
 content = " "
 content-font = 2
-content-foreground = ${colors.grey}
+content-foreground = ${colors.background}
 content-background = ${colors.trans}
-
-[module
 
 ;-------------------------------------------------------------------------------
 ;	M O D U L E S
@@ -199,50 +205,48 @@ label-unfocused-background = ${colors.background}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = " ● "
-label-urgent-foreground = ${colors.red}
+label-urgent-foreground = ${colors.blue}
 label-urgent-background = ${colors.background}
 
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " CPU "
-format-prefix-foreground = ${colors.purple}
-format-prefix-background = ${colors.background}
-label = %percentage%%
-label-foreground = ${colors.purple}
-label-background = ${colors.background}
+format-prefix = 
+format-prefix-foreground = ${colors.background}
+format-prefix-background = ${colors.alt}
+label = " %percentage%%"
+label-foreground = ${colors.alt}
+format-underline = ${colors.alt}
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " RAM "
-format-prefix-foreground = ${colors.pink}
-format-prefix-background = ${colors.grey}
-label = %percentage_used%%
+format-prefix = 
+format-prefix-foreground = ${colors.background}
+format-prefix-background = ${colors.pink}
+label = " %percentage_used%%"
 label-foreground = ${colors.pink}
-label-background = ${colors.grey}
+# label-background = ${colors.grey}
+format-underline = ${colors.pink}
 
 [module/wlan]
 type = internal/network
-interface = 
+interface = wlp4s0
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
+format-connected = <label-connected>
 format-connected-underline = #9f78e1
-label-connected = %essid%
+label-connected = 
+; label-connected = " NET %signal%%"
+label-connected-foreground = ${colors.white}
+label-connected-background = ${colors.grey}
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
+label-disconnected-foreground = ${colors.white}
+label-disconnected-background = ${colors.grey}
+format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
+label-disconnected = " NO NET"
 ;label-disconnected-foreground = ${colors.foreground-alt}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
@@ -264,61 +268,91 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date = " %m-%d"
+date = %a %m-%d
 
 time= %H:%M
 
-label = %date% %time%
-label-foreground = ${colors.white}
-label-background = ${colors.grey}
+label = " %date% %time%"
+format-label-foreground = ${colors.white}
+format-underline = ${colors.white}
+format-prefix = 
+format-prefix-foreground = ${colors.background}
+format-prefix-background = ${colors.white}
+
+[module/volumeicon]
+type = custom/script
+exec = ~/.config/polybar/pulseaudio-icon.sh
+interval = 3
+
+format-foreground = ${colors.background}
+format-background = ${colors.purple}
+# format-underline = ${colors.purple}
 
 [module/volume]
-type = internal/volume
+type = custom/script
+exec = ~/.config/polybar/pulseaudio-volume.sh
+interval = 3
 
-; mapping = true
-format-volume = <ramp-volume><label-volume>
+format-foreground = ${colors.purple}
+format-underline = ${colors.purple}
 
-label-volume = %percentage%%
-label-volume-foreground = ${colors.blue}
-label-volume-background = ${colors.background}
-label-muted = " MUTED "
-label-muted-foreground = ${colors.blue}
-label-muted-background = ${colors.background}
-
-ramp-volume-0 = " VOL "
-ramp-volume-0-foreground = ${colors.blue}
-ramp-volume-0-background = ${colors.background}
-ramp-volume-1 = " VOL "
-ramp-volume-1-foreground = ${colors.blue}
-ramp-volume-1-background = ${colors.background}
-ramp-volume-2 = " VOL "
-ramp-volume-2-foreground = ${colors.blue}
-ramp-volume-2-background = ${colors.background}
-ramp-volume-3 = " VOL "
-ramp-volume-3-foreground = ${colors.blue}
-ramp-volume-3-background = ${colors.background}
+# [module/volume]
+# type = internal/pulseaudio
+# 
+# ; mapping = true
+# format-volume = <ramp-volume><label-volume>
+# 
+# label-volume = %percentage%%
+# label-volume-foreground = ${colors.blue}
+# label-volume-background = ${colors.background}
+# label-muted = " MUTED "
+# label-muted-foreground = ${colors.blue}
+# label-muted-background = ${colors.background}
+# 
+# ramp-volume-0 = " VOL "
+# ramp-volume-0-foreground = ${colors.blue}
+# ramp-volume-0-background = ${colors.background}
+# ramp-volume-1 = " VOL "
+# ramp-volume-1-foreground = ${colors.blue}
+# ramp-volume-1-background = ${colors.background}
+# ramp-volume-2 = " VOL "
+# ramp-volume-2-foreground = ${colors.blue}
+# ramp-volume-2-background = ${colors.background}
+# ramp-volume-3 = " VOL "
+# ramp-volume-3-foreground = ${colors.blue}
+# ramp-volume-3-background = ${colors.background}
 
 [module/battery]
 type = internal/battery
 battery = BAT0
 adapter = AC
+full-at = 98
+
 time-format = %H:%M
 
+format-charging-prefix = 
+label-charging = " %percentage%% %time%"
 format-charging = <label-charging>
+format-charging-underline = ${colors.green}
 format-charging-foreground = ${colors.green}
-format-charging-background = ${colors.grey}
-format-discharging = <label-discharging>
-format-discharging-foreground = ${colors.green}
-format-discharging-background = ${colors.grey}
-format-full = <label-full>
-format-full-foreground = ${colors.blue}
-format-full-background = ${colors.grey}
+format-charging-prefix-foreground = ${colors.background}
+format-charging-prefix-background = ${colors.green}
 
-# Change the time label layout, I don't care about seconds
-label-charging = " CHR %percentage%% %time%"
-label-discharging = " BAT %percentage%% %time%"
-label-discharging-foreground = ${colors.green}
-label-full = BAT %percentage%%
+format-discharging-prefix = 
+label-discharging = " %percentage%% %time%"
+format-discharging = <label-discharging>
+format-discharging-underline = ${colors.green}
+format-discharging-foreground = ${colors.green}
+format-discharging-prefix-foreground = ${colors.background}
+format-discharging-prefix-background = ${colors.green}
+
+format-full-prefix = 
+label-full = " %percentage%%"
+format-full = <label-full>
+format-full-underline = ${colors.blue}
+format-full-foreground = ${colors.blue}
+format-full-prefix-foreground = ${colors.background}
+format-full-prefix-background = ${colors.blue}
 
 [module/temperature]
 type = internal/temperature
@@ -365,6 +399,18 @@ menu-2-0 = power off
 menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
+
+[module/weather]
+type = custom/script
+exec = ~/.config/polybar/openweathermap-simple.sh
+interval = 600
+label-font = 2
+format-prefix = 
+format-prefix-foreground = ${colors.background}
+format-prefix-background = ${colors.blue}
+label-foreground = ${colors.blue}
+label-background = ${colors.background}
+label-underline = ${colors.blue}
 
 [module/music]
 type = custom/script
