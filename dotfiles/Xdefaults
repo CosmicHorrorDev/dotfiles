@@ -51,7 +51,7 @@ Xft.lcdfilter: lcddefault
 URxvt.depth:                32
 URxvt.background:           [70]#000000
 URxvt.foreground:           grey
-URxvt.font:                 xft:Iosevka:style=Regular:size=12
+URxvt.font:                 xft:Iosevka SS01:size=12
 URxvt.scrollBar:            false
 URxvt.mouseWheelScrollPage: false
 URxvt.saveLines:            5000

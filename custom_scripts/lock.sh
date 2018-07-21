@@ -23,14 +23,14 @@ i3lock                        \
 \
 --timecolor=$D                \
 --timestr="%H %M"             \
---time-font=Iosevka:bold      \
+--time-font="Iosevka SS01:bold"      \
 --timesize=40                 \
 --timepos="ix:iy - 10"        \
 \
 --datecolor=$D                \
 --datestr="%m %d"             \
 --datesize=18                 \
---date-font=Iosevka:bold      \
+--date-font="Iosevka SS01:bold"      \
 --datesize=40                 \
 --datepos="ix:iy + 45"        \
 \
