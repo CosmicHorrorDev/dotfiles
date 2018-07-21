@@ -213,7 +213,7 @@ mode "(s)hutdown, (r)eboot, (l)ock, or (e)xit" {
 	bindsym s exec --no-startup-id systemctl poweroff
 	bindsym r exec --no-startup-id systemctl reboot
 	bindsym e exec --no-startup-id i3-msg exit
-	bindsym l mode "default"; exec ~/.config/custom_scripts/lock.sh
+	bindsym l mode "default"; exec --no-startup-id ~/.config/custom_scripts/lock.sh
 	
 	# back to normal: Enter, Escape, $mod+0, or q
 	bindsym Return mode "default"
