@@ -52,5 +52,8 @@ mkdir -p $EXTRA_HOME/less
 cp $CONFIG_HOME/less/lesskey $EXTRA_HOME/less
 
 # Add all my custom scripts
-cp -r $CONFIG_HOME/custom_scripts $REPO_HOME
+mkdir -p $REPO_HOME/custom_scripts
+cp $CONFIG_HOME/custom_scripts/lock.sh $REPO_HOME/custom_scripts
+cp $CONFIG_HOME/custom_scripts/py_file.sh $REPO_HOME/custom_scripts
+cp $CONFIG_HOME/custom_scripts/template.py $REPO_HOME/custom_scripts
 
