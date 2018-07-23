@@ -4,6 +4,9 @@ call deoplete#custom#source('deoplete-rust', 'filetypes', ['rs'])
 let g:deoplete#sources#rust#racer_binary='/home/lovecraft/.data/cargo/bin/racer'
 let g:deoplete#sources#rust#rust_source_path='/home/lovecraft/.data/rust_source/rust/src'
 
+" rust.vim Settings
+let g:rustfmt_autosave = 1
+
 " Strip Trailing Whitepace
 autocmd BufWritePre * %s/\s\+$//e
 

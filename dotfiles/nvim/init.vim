@@ -26,6 +26,9 @@ if dein#load_state('~/.cache/dein')
  " Toml syntax support
  call dein#add('cespare/vim-toml')
 
+ " Rust Specific
+ call dein#add('rust-lang/rust.vim')
+
  call dein#end()
  call dein#save_state()
 endif
@@ -54,10 +57,9 @@ let g:mkdp_refresh_slow = 1
 " Deoplete Color Changes
 highlight Pmenu ctermfg=4 ctermbg=0
 
-" Ale Color Changes
+" Ale settings
 highlight clear SignColumn
 
-" Ale settings
 let g:ale_sign_column_always = 1
 
 let g:ale_echo_msg_error_str = 'E'
