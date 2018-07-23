@@ -47,6 +47,9 @@ cp $HOME/.gitconfig $DOTS_HOME/gitconfig
 # Xdefaults config - should move to Xresources though
 cp $HOME/.Xdefaults $DOTS_HOME/Xdefaults
 
+# xprofile
+cp $HOME/.xprofile $DOTS_HOME/xprofile
+
 # lesskey file, takes extra to get it set up though
 mkdir -p $EXTRA_HOME/less
 cp $CONFIG_HOME/less/lesskey $EXTRA_HOME/less
