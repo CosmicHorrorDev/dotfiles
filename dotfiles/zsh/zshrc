@@ -22,7 +22,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(
-  git
+#   git
   vi-mode
   zsh-autosuggestions
   zsh-syntax-highlighting
@@ -43,8 +43,10 @@ plugins=(
 
 # # Aliases
 # Lazy aliases
-alias c='clear'
 alias r='ranger'
+alias mp='ncmpcpp'
+
+alias c='clear'
 alias e='exit'
 
 # Pandoc md to pdf word-vomit alias
@@ -58,15 +60,42 @@ alias nv='nvim'
 alias vim='nvim'
 alias vi='nvim'
 
-# extra git aliases
-alias gs='git status'
-alias gpom='git push -u origin master'
+# Git aliases
+alias g='git'
+
+alias gc='git commit -v -m'
+alias gca='git commit -av -m'
+
+alias gco='git checkout'
+alias gcom='git checkout master'
+alias gcod='git checkout develop'
+
+alias gb='git branch'
+alias gbd='git branch -d'
+
 alias gi='git init'
+alias gs='git status'
+alias gd='git diff'
+
+alias ga='git add'
+alias gaa='git add --all'
+
+alias gp='git push'
+alias gpo='git push origin'
+alias gpom='git push -u origin master'
+
+alias gl='git log'
+alias gls='git log --stat'
+alias glg='git log --graph --decorate --oneline'
+
+alias gm='git merge'
+alias gmn='git merge --no-ff'
 
 # Rust Aliases
 alias cn='cargo new'
-alias cnl='cargo new --lib'
 alias cns='cargo new --vcs none'
+alias cnl='cargo new --lib'
+alias cnls='cargo new --lib --vcs none'
 
 alias cb='cargo build'
 alias cbr='cargo build --release'
@@ -75,6 +104,8 @@ alias cr='cargo run'
 alias crr='cargo run --release'
 
 alias ct='cargo test'
+
+alias ccl='cargo clean'
 
 # Python Aliases
 alias pn='~/.config/custom_scripts/py_file.sh'
