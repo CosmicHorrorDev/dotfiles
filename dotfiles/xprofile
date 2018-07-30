@@ -1,1 +1,30 @@
 mpd ~/.config/mpd/mpd.conf &
+
+## Environment Variables
+# XDG stuff
+export XDG_CONFIG_HOME=~/.config
+export XDG_DATA_HOME=~/.data
+
+# oh-my-zsh location
+export ZSH_CUSTOM=/usr/share/oh-my-zsh/custom
+
+# Neovim as editor
+export EDITOR=nvim
+export VISUAL=nvim
+
+# Less configuration
+export LESSKEY=~/.config/less/less_config
+
+# Keeps ranger from loading the configs twice
+export RANGER_LOAD_DEFAULT_RC=FALSE
+
+# Rust location changes
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+
+# GTK theme stuff
+export GTK2_RC_FILES=/usr/share/themes/Arc-Dark/gtk-2.0/gtkrc
+export GTK_THEME=Arc-Dark
+
+# Use all cores when compiling packages
+export MAKEFLAGS="-j$(nproc)"
