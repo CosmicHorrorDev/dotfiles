@@ -33,6 +33,9 @@ font xft:Iosevka
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Windows that should always be floating
+for_window [class="Peek"] floating enable
+
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
@@ -51,7 +54,7 @@ bindsym $mod+Shift+d exec ~/.config/custom_scripts/rofi-web-searcher/web-search.
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-# Brightness and eventually sound
+# Brightness and sound
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20
 bindsym XF86AudioMute exec pamixer -t
@@ -62,6 +65,7 @@ bindsym XF86AudioRaiseVolume exec pamixer -i 5
 bindsym $mod+F1 exec vivaldi-stable
 bindsym $mod+F2 exec i3-sensible-terminal -e ranger
 bindsym $mod+Shift+F2 exec pcmanfm
+bindsym $mod+F3 exec i3-sensible-terminal -e ncmpcpp
 
 # change focus
 bindsym $mod+j focus left
@@ -225,7 +229,7 @@ mode "(s)hutdown, (r)eboot, (l)ock, or (e)xit" {
 bindsym $mod+0 mode "(s)hutdown, (r)eboot, (l)ock, or (e)xit"
 
 # Autostart applications
-exec --no-startup-id feh --bg-scale /home/lovecraft/Media/Pictures/ghost_in_a_shell_sfw.png
+exec --no-startup-id feh --bg-scale /home/lovecraft/Media/Pictures/Wallpapers/ghost_in_a_shell_sfw.png
 exec --no-startup-id compton -b --xrender-sync-fence
 
 # Start polybar instead of i3-status bar

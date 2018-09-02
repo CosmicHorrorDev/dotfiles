@@ -29,6 +29,10 @@ if dein#load_state('~/.cache/dein')
  " Rust Specific
  call dein#add('rust-lang/rust.vim')
 
+ " More Functional Line
+ call dein#add('vim-airline/vim-airline')
+ call dein#add('vim-airline/vim-airline-themes')
+
  call dein#end()
  call dein#save_state()
 endif
@@ -58,6 +62,11 @@ let g:mkdp_refresh_slow = 1
 highlight Pmenu ctermfg=4 ctermbg=0
 
 " Ale settings
+let g:ale_lint_delay = 1000
+
+nmap <silent> <C-l> <Plug>(ale_previous_wrap)
+nmap <silent> <C-k> <Plug>(ale_next_wrap)
+
 highlight clear SignColumn
 
 let g:ale_sign_column_always = 1
@@ -76,6 +85,9 @@ highlight ALEError ctermbg=Black
 highlight clear ALEWarningSign
 highlight ALEWarningSign ctermfg=Magenta
 highlight ALEWarning ctermbg=Black
+
+" vim-airline settings
+let g:airline_theme='violet'
 
 " Key Remaps
 imap jj <Esc>

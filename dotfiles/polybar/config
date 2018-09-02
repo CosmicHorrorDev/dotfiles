@@ -6,7 +6,7 @@
 background = #131313
 background-alt = #333
 
-foreground = #c2c2c2
+foreground = #d2d2d2
 foreground-alt = #ee3333
 
 trans = #da292b2e
@@ -51,9 +51,9 @@ font-1 = Weather Icons:size=13;2
 font-2 = Material Icons:size=15;3
 font-3 = IPAPGothic:size=16;2
 
-modules-left = i3 
+modules-left = i3
 ; modules-center = music
-modules-right = wlan space weather space memory space cpu space battery volicon volume space date
+modules-right = wlan space space memory space cpu space battery volicon volume space date
 
 tray-position = right
 tray-background = ${colors.background}
@@ -93,7 +93,7 @@ ws-icon-8 = 8;八
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
 
-label-mode = %mode% 
+label-mode = %mode%
 label-mode-foreground = ${colors.pink}
 label-mode-background = ${colors.background}
 
@@ -136,10 +136,10 @@ format-underline = ${colors.pink}
 [module/wlan]
 type = internal/network
 interface = wlp4s0
-interval = 5
+interval = 3
 
 format-connected = <label-connected>
-label-connected = 
+label-connected =
 
 format-disconnected = <label-disconnected>
 
@@ -154,7 +154,7 @@ label-disconnected-underline = ${colors.red}
 
 [module/eth]
 type = internal/network
-interface = 
+interface =
 interval = 3.0
 
 format-connected-underline = #55aa55
@@ -187,7 +187,7 @@ format-prefix-background = ${colors.foreground}
 [module/volicon]
 type = custom/script
 exec = ~/.config/polybar/pulseaudio-icon.sh
-interval = 3
+interval = 1
 
 format-foreground = ${colors.background}
 format-background = ${colors.darkblue}
@@ -197,7 +197,7 @@ format-prefix-background = ${colors.background}
 [module/volume]
 type = custom/script
 exec = ~/.config/polybar/pulseaudio-volume.sh
-interval = 3
+interval = 1
 
 format-foreground = ${colors.darkblue}
 format-underline = ${colors.darkblue}
@@ -206,7 +206,7 @@ format-underline = ${colors.darkblue}
 type = internal/battery
 battery = BAT0
 adapter = AC
-full-at = 98
+# full-at = 98
 
 time-format = %H:%M
 
@@ -266,11 +266,11 @@ label-background = ${colors.background}
 label-underline = ${colors.blue}
 
 [module/music]
-type = custom/script
-interval = 1
-
-label = %output:0:45:...%
-exec = ~/comfy_guration/scripts/polybar/poly_music.sh
+# type = custom/script
+# interval = 1
+#
+# label = %output:0:45:...%
+# exec = ~/comfy_guration/scripts/polybar/poly_music.sh
 
 [settings]
 screenchange-reload = true
