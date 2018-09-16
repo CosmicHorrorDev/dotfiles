@@ -29,6 +29,9 @@ if dein#load_state('~/.cache/dein')
  " Rust Specific
  call dein#add('rust-lang/rust.vim')
 
+ " C++ Syntax Highlighting
+ call dein#add('octol/vim-cpp-enhanced-highlight')
+
  " More Functional Line
  call dein#add('vim-airline/vim-airline')
  call dein#add('vim-airline/vim-airline-themes')
@@ -44,13 +47,13 @@ filetype plugin indent on
 syntax enable
 
 " Bind deoplete selection key to TAB
-inoremap <silent><expr> <TAB>                                   
-\ pumvisible() ? "\<C-n>" :                                     
-\ <SID>check_back_space() ? "\<TAB>" :                          
-\ deoplete#mappings#manual_complete()                           
-function! s:check_back_space() abort "{{{                       
-let col = col('.') - 1                                          
-return !col || getline('.')[col - 1]  =~ '\s'                   
+inoremap <silent><expr> <TAB>
+\ pumvisible() ? "\<C-n>" :
+\ <SID>check_back_space() ? "\<TAB>" :
+\ deoplete#mappings#manual_complete()
+function! s:check_back_space() abort "{{{
+let col = col('.') - 1
+return !col || getline('.')[col - 1]  =~ '\s'
 endfunction"}}}
 
 let g:mkdp_path_to_chrome = "/usr/bin/google-chrome-stable"
@@ -64,6 +67,7 @@ highlight Pmenu ctermfg=4 ctermbg=0
 " Ale settings
 let g:ale_lint_delay = 1000
 
+nmap <C-a> :ALEFix<CR>
 nmap <silent> <C-l> <Plug>(ale_previous_wrap)
 nmap <silent> <C-k> <Plug>(ale_next_wrap)
 
@@ -85,6 +89,13 @@ highlight ALEError ctermbg=Black
 highlight clear ALEWarningSign
 highlight ALEWarningSign ctermfg=Magenta
 highlight ALEWarning ctermbg=Black
+
+" Ale Fixers
+let g:ale_fixers = {
+\   'cpp': [
+\       'clang-format'
+\   ],
+\}
 
 " vim-airline settings
 let g:airline_theme='violet'

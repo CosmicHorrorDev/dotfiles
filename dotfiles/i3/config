@@ -61,6 +61,10 @@ bindsym XF86AudioMute exec pamixer -t
 bindsym XF86AudioLowerVolume exec pamixer -d 5
 bindsym XF86AudioRaiseVolume exec pamixer -i 5
 
+# Screen capture and stuff
+bindsym Print exec scrot '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Media/Pictures/Screenshots'
+bindsym $mod+Shift+s exec flameshot gui
+
 # Application specific key-binding
 bindsym $mod+F1 exec vivaldi-stable
 bindsym $mod+F2 exec i3-sensible-terminal -e ranger
@@ -193,10 +197,10 @@ mode "resize: left|up shrink, right|down grow" {
         bindsym l resize shrink height 5 px or 5 ppt
         bindsym semicolon resize grow width 5 px or 5 ppt
 
-	bindsym Shift+j resize shrink width 10 px or 10 ppt
-	bindsym Shift+k resize grow height 10 px or 10 ppt
-	bindsym Shift+l resize shrink height 10 px or 10 ppt
-	bindsym Shift+semicolon resize grow width 10 px or 10 ppt
+        bindsym Shift+j resize shrink width 10 px or 10 ppt
+        bindsym Shift+k resize grow height 10 px or 10 ppt
+        bindsym Shift+l resize shrink height 10 px or 10 ppt
+        bindsym Shift+semicolon resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 5 px or 5 ppt
@@ -208,22 +212,22 @@ mode "resize: left|up shrink, right|down grow" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
-	bindsym q mode "default"
+        bindsym q mode "default"
 }
 
 bindsym $mod+r mode "resize: left|up shrink, right|down grow"
 
 mode "(s)hutdown, (r)eboot, (l)ock, or (e)xit" {
-	bindsym s exec --no-startup-id systemctl poweroff
-	bindsym r exec --no-startup-id systemctl reboot
-	bindsym e exec --no-startup-id i3-msg exit
-	bindsym l mode "default"; exec --no-startup-id ~/.config/custom_scripts/lock.sh
-	
-	# back to normal: Enter, Escape, $mod+0, or q
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-	bindsym $mod+0 mode "default"
-	bindsym q mode "default"
+        bindsym s exec --no-startup-id systemctl poweroff
+        bindsym r exec --no-startup-id systemctl reboot
+        bindsym e exec --no-startup-id i3-msg exit
+        bindsym l mode "default"; exec --no-startup-id ~/.config/custom_scripts/lock.sh
+
+        # back to normal: Enter, Escape, $mod+0, or q
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+0 mode "default"
+        bindsym q mode "default"
 }
 
 bindsym $mod+0 mode "(s)hutdown, (r)eboot, (l)ock, or (e)xit"
