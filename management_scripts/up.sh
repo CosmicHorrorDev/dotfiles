@@ -1,8 +1,8 @@
 #! /bin/bash
 
-# # Lay some groundwork
-REPO_HOME=~/Programming/Repos/dotfiles
-DOTS_HOME=~/Programming/Repos/dotfiles/dotfiles
+# Lay some groundwork
+REPO_HOME="$(pwd)"/"`dirname $0`"/..
+DOTS_HOME=$REPO_HOME/dotfiles
 CONFIG_HOME="$XDG_CONFIG_HOME"
 
 # zsh configs
@@ -29,7 +29,7 @@ ln -sf $DOTS_HOME/polybar/pulseaudio-icon.sh $CONFIG_HOME/polybar/pulseaudio-ico
 ln -sf $DOTS_HOME/polybar/pulseaudio-volume.sh $CONFIG_HOME/polybar/pulseaudio-volume.sh
 
 # neovim config - whole directory
-ln -sfd $DOTS_HOME/nvim $CONFIG_HOME/nvim
+ln -sfd $DOTS_HOME/nvim $CONFIG_HOME
 
 # neofetch config
 mkdir -p $CONFIG_HOME/neofetch
@@ -54,6 +54,8 @@ ln -sf $DOTS_HOME/less/lesskey $CONFIG_HOME/less/lesskey
 ln -sf $DOTS_HOME/less/less_config $CONFIG_HOME/less/less_config
 
 # Add all my custom scripts - whole directory
-# mkdir -p $CONFIG_HOME/custom_scripts
-ln -sfd $REPO_HOME/custom_scripts $CONFIG_HOME/custom_scripts
+ln -sfd $REPO_HOME/custom_scripts $CONFIG_HOME
 
+# Wallpaper
+mkdir -p ~/Media/Pictures/Wallpapers
+ln -sf $REPO_HOME/ghost_in_a_shell_sfw.png ~/Media/Pictures/Wallpapers/ghost_in_a_shell_sfw.png
