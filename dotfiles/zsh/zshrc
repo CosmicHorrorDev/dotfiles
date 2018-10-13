@@ -1,6 +1,7 @@
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/
 
+
 # Theme
 ZSH_THEME="maran"
 
@@ -41,13 +42,24 @@ plugins=(
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
+if [[ ! -d $ZSH_CACHE_DIR ]]; then
+  mkdir $ZSH_CACHE_DIR
+fi
+
+source $ZSH/oh-my-zsh.sh
+
 # # Aliases
 # Lazy aliases
 alias r='ranger'
 alias mp='ncmpcpp'
+alias gt='gotop'
 
 alias c='clear'
 alias e='exit'
+alias q='exit'
+
+alias ls='exa'
 
 # Pandoc md to pdf word-vomit alias
 alias mdtopdf='pandoc -V margin-left=1in -V margin-right=1in -V margin-top=1in -V margin-bottom=1in -f gfm --pdf-engine wkhtmltopdf -o'
@@ -110,6 +122,13 @@ alias ccl='cargo clean'
 # Python Aliases
 alias pn='~/.config/custom_scripts/py_file.sh'
 
+# C/C++ Aliases
+alias m='make'
+alias mm='make > /dev/null && ./main'
+
+# Programming aliases
+alias leak-check='valgrind --leak-check=full -v'
+
 # Custom vi Movement
 bindkey -a j backward-char
 bindkey -a k down-history
@@ -120,10 +139,3 @@ bindkey -v 'jj' vi-cmd-mode
 
 # keychain for ssh-agent stuff
 eval $(keychain --eval --quiet --noask id_rsa)
-
-ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
-if [[ ! -d $ZSH_CACHE_DIR ]]; then
-  mkdir $ZSH_CACHE_DIR
-fi
-
-source $ZSH/oh-my-zsh.sh

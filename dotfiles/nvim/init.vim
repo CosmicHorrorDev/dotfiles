@@ -98,16 +98,31 @@ let g:ale_fixers = {
 \}
 
 " vim-airline settings
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.linenr = ''
+
 let g:airline_theme='violet'
+let g:airline_powerline_fonts = 1
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_alt_sep = ''
+
+let g:airline_section_z = airline#section#create_right(['linenr', 'maxlinenr'])
 
 " Key Remaps
 imap jj <Esc>
+imap JJ <Esc>
 noremap <Tab> <Esc>
 
 noremap j h
 noremap k j
 noremap l k
 noremap ; l
+
+noremap WW :w<CR>
 
 " Key binds
 noremap <silent> ,<space> :nohlsearch<CR>
@@ -127,4 +142,3 @@ hi Statement ctermfg=Yellow
 
 hi ColorColumn ctermbg=Cyan
 hi MatchParen ctermbg=NONE ctermfg=Blue
-

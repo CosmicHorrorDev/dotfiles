@@ -53,7 +53,7 @@ font-3 = IPAPGothic:size=16;2
 
 modules-left = i3
 ; modules-center = music
-modules-right = wlan space space memory space cpu space battery volicon volume space date
+modules-right = wlan space weather space memory space cpu space battery volicon volume space date
 
 tray-position = right
 tray-background = ${colors.background}
